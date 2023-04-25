@@ -1,0 +1,31 @@
+@startuml 演習2-8
+actor 利用者
+actor ホテル従業員
+actor ホテル管理者
+
+usecase "空室状況閲覧" as UC1
+利用者 --> UC1
+UC1 --> ホテル従業員 : 空室状況入力
+
+usecase "部屋予約" as UC2
+利用者 --> UC2
+UC2 --> ホテル従業員 : 部屋予約入力
+
+usecase "空室状況入力" as UC3
+ホテル従業員 --> UC3
+
+usecase "予約集計" as UC4
+ホテル管理者 --> UC4
+
+usecase "会員登録" as UC5
+利用者 --> UC5
+UC5 --> UC2 : 予約時に会員登録
+
+usecase "ログイン" as UC6
+利用者 --> UC6
+ホテル従業員 --> UC6
+ホテル管理者 --> UC6
+
+usecase "キャンペーン期間中の宿泊費" as UC7
+利用者 --> UC7
+@enduml
