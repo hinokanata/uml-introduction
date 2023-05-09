@@ -1,0 +1,7 @@
+@startuml 汎化継承
+class 社員 {}
+class 技術社員 {}
+class 営業社員 {}
+社員 <|-- 技術者員
+社員 <|-- 営業社員
+@enduml
