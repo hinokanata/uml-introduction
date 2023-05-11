@@ -1,0 +1,28 @@
+@startuml 演習3-5
+class Guest {
+  -name: string
+  -checkinDate: date
+  -checkoutDate: date
+  -roomNumber: string
+  -roomType: string
+  -roomCharge: int
+  +calculateRoomCharge(): int
+}
+
+class Room {
+  -roomNumber: string
+  -roomType: string
+  -roomCharge: int
+}
+
+class Hotel {
+  -campaignStartDate: date
+  -campaignEndDate: date
+  -campaignRoomCharge: int
+  +isCampaignDate(date): bool
+}
+
+Guest *-- Room
+Room o-- Hotel
+
+@enduml

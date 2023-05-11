@@ -1,0 +1,13 @@
+@startuml 演習3-4
+class Car {
+  -tire1: Tire
+  -tire2: Tire
+  -tire3: Tire
+  -tire4: Tire
+  +drive()
+}
+
+class Tire
+
+Car *-- Tire
+@enduml
