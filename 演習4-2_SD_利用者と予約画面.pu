@@ -1,0 +1,9 @@
+@startuml 演習4-2
+actor User
+participant "予約画面" as ReservationScreen
+participant "認証" as Authentication
+
+User -> ReservationScreen: ログイン（非同期）
+ReservationScreen -> Authentication: 認証を呼び出す（同期）
+return from Authentication to ReservationScreen
+@enduml
