@@ -1,0 +1,16 @@
+@startuml 演習6-3-1
+left to right direction
+actor 患者 as patient
+actor 看護士 as doctor
+rectangle 予約システム{
+    usecase 予約受付
+    usecase 予約管理
+    usecase 患者情報の管理
+    usecase 順番確認
+}
+doctor -- 予約受付
+doctor -- 予約管理
+doctor -- 患者情報の管理
+doctor -- 順番確認
+順番確認 -- patient
+@enduml
