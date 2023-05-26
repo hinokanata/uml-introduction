@@ -1,0 +1,39 @@
+@startuml 演習6-4-3
+
+actor クライアント as "客"
+participant 自動販売機 as VendingMachine
+participant ボタン as Button
+participant 料金装置 as PaymentDevice
+participant ベンダー装置 as VendorDevice
+
+activate クライアント
+
+クライアント -> VendingMachine: 商品購入(商品番号)
+activate VendingMachine
+VendingMachine -> ボタン: ボタン押下(商品番号)
+activate Button
+Button --> VendingMachine: 商品番号
+deactivate Button
+VendingMachine -> PaymentDevice: お金投入(金額)
+activate PaymentDevice
+PaymentDevice --> VendingMachine: 金額
+deactivate PaymentDevice
+VendingMachine -> VendorDevice: 商品購入(商品番号, 金額)
+activate VendorDevice
+VendorDevice --> VendingMachine: 取引結果
+deactivate VendorDevice
+VendingMachine --> クライアント: ドリンクを渡す
+deactivate VendingMachine
+deactivate クライアント
+
+activate ベンダー装置
+
+VendingMachine -> VendorDevice: 残りが半分以下になった
+activate VendorDevice
+VendorDevice -> ベンダー装置: ドリンク補充要求
+deactivate VendorDevice
+VendorDevice -> ベンダー装置: 料金回収要求
+activate ベンダー装置
+deactivate ベンダー装置
+
+@enduml
