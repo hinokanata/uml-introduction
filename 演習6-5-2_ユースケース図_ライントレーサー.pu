@@ -1,0 +1,17 @@
+@startuml 演習6-5-2
+
+left to right direction
+
+actor ユーザー  
+actor 光センサー
+actor 左右モーター
+
+rectangle ライントレーサーシステム{
+    usecase "ラインの右境界線上を進む" as line
+
+ユーザー --> line
+line -->  光センサー
+line -->  左右モーター
+}
+
+@enduml
