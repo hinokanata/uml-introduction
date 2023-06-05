@@ -1,0 +1,24 @@
+@startuml 演習7-1
+start
+
+:ユーザ名を入力する;
+:パスワードを入力する;
+
+if (認証が成功？) then (yes)
+  :予約を行う;
+else (no)
+  :ユーザとパスワードを再入力する;
+  repeat
+    :ユーザ名を入力する;
+    :パスワードを入力する;
+  repeat while (認証が成功したか？)
+
+  if (認証が成功したか？) then (yes)
+    :予約を行う;
+  else (no)
+    stop
+  endif
+endif
+
+stop
+@enduml
